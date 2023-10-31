@@ -1,15 +1,15 @@
-import os
+#!/usr/bin/python3
+
 import sys
 import ipaddress
 
-# define functions
 def read_file(filename):
     with open(filename, 'r') as f:
         ips = f.read().splitlines()
     ips_list = []
     for ip in ips:
         if "/" in ip:
-            for ip in ipaddress.IPv4Network(ip):
+            for ip in ipaddress.IPv4Network(ip, False):
                 ips_list.append(str(ip))
         else:
             ips_list.append(ip)
@@ -27,7 +27,6 @@ def print_help():
 
 
 # get user inputs
-
 if "-h" in sys.argv:
     print_help()
     sys.exit()
