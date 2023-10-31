@@ -1,4 +1,4 @@
-#!/etc/python3
+#!/bin/python3
 
 # import modules
 import os
