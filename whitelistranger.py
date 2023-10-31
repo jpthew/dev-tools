@@ -1,6 +1,3 @@
-#!/bin/python3
-
-# import modules
 import os
 import sys
 import ipaddress
