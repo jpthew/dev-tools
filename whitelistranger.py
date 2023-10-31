@@ -41,7 +41,7 @@ else:
 if "-b" in sys.argv:
     blacklist = read_file(sys.argv[sys.argv.index("-b") + 1])
 else:
-    print_
+    print_help()
     sys.exit()
 
 if "-o" in sys.argv:
