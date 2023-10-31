@@ -1,5 +1,5 @@
 # WhitelistRanger
-WhitelistRanger is a tool that creates a list of IPs from whitelist and blacklist files, creating a clean target list. It handles CIDR notation in the input files. It can also verify that a whitelist file does not include IPs from a chosen blacklist file.
+WhitelistRanger is a tool that creates a list of IPs from whitelist and blacklist files, creating a clean target list. It handles CIDR notation in the input files. It can (SOON) also verify that a whitelist file does not include IPs from a chosen blacklist file.
 
 ## Features
 Create a clean target list from whitelist and blacklist files.
