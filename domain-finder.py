@@ -3,6 +3,7 @@
 # import modules for dns lookup and whois lookup
 import dns.resolver # requires pip3 install dnspython
 import sys
+import tqdm
 
 # create function for reverse dns lookup by ip address
 def reverse_dns(ip):
@@ -30,6 +31,6 @@ if len(sys.argv) < 2:
     sys.exit(1)
 
 # print to sdtout
-for domain in get_domains_from_ips(sys.argv[1]):
+for domain in tqdm(get_domains_from_ips(sys.argv[1])):
     print(domain)
 
