@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 # import modules for dns lookup and whois lookup
-import dns.resolver
+import dns.resolver # requires pip3 install dnspython
 import sys
 
 # create function for reverse dns lookup by ip address
@@ -24,6 +24,9 @@ def get_domains_from_ips(ip_file):
 
 if "-h" in sys.argv or "--help" in sys.argv:
     print("Usage: python3 domain-finder.py <ip_file>")
+    sys.exit(1)
+if len(sys.argv) < 2:
+    print("Error: No ip file given\n\nUsage: python3 domain-finder.py <ip_file>")
     sys.exit(1)
 
 # print to sdtout
