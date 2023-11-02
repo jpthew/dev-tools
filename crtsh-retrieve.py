@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+### NOT FINISHED DUE TO INCOMPATABILITY WITH CUSTOMER ENVIRONMENT ###
 from crtsh import crtshAPI
 import json
 import sys
