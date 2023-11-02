@@ -1,11 +1,18 @@
 # Custom test files
 temp/
+test.txt
+output.txt
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
 
+# venv environment
+.venv/
+bin/
+include/
+*.cfg
 # C extensions
 *.so
 
