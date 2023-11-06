@@ -22,9 +22,12 @@ def get_cert_info(domain_file): # read file and return certificate information
                 output_connect = True
             domain = line.strip()
             ctx = ssl.create_default_context()
+            if "-k" in sys.argv: # ignore certificate errors
+                ctx.check_hostname = False
+                ctx.verify_mode = ssl.CERT_NONE
             with ctx.wrap_socket(socket.socket(), server_hostname=domain) as s:
                 try:
-                    s.connect((domain, 443))
+                    s.connect((domain, port))
                     if verbose == True:
                         print("Connected to " + domain)
                     if output_connect == True:
@@ -54,10 +57,15 @@ Flags:
     -o <output_file>    Output domain connection status to file instead of stdout 
                         --  "+" for success, "-" for failure
     -oC <output_file>   Output raw certs to file instead of stdout
+    -p, --port <int>    Set custom port (Default 443)
     -t <float>          Set custom timeout in seconds for socket connections (Default 2 seconds) 
                         --  Usage: 
                                 -t 5 (for 5 seconds)
                                 -t 0.5 (for 0.5 seconds)
+    -k                  Ignore certificate errors 
+                        -- Useful for testing if domain website exists  
+                                Disables certificate capture on "-oC" and "-v" flags
+                                -o flag still works to output connection status
     -v, --verbose       Verbose output
     -h, --help          Display this help message""")
 
@@ -69,6 +77,10 @@ if len(sys.argv) < 2:
 if "-h" in sys.argv or "--help" in sys.argv:
     helppage()
     sys.exit(1)
+if "-p" in sys.argv or "--port" in sys.argv:
+    port = int(sys.argv[sys.argv.index("-p") + 1])
+else:
+    port = 443
 if "-t" in sys.argv: # set timeout
     socket_timeout = float(sys.argv[sys.argv.index("-t") + 1])
     socket.setdefaulttimeout(socket_timeout)
