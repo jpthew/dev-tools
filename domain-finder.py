@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-# import modules for dns lookup and whois lookup
+# 
 import dns.resolver # requires pip3 install dnspython
 import sys
 import tqdm

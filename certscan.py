@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 
+# NEED TO CONVERT TO ARGPARSE #
+
 import sys
 import ssl
 import socket
