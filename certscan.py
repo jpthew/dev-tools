@@ -61,6 +61,11 @@ Flags:
     -v, --verbose       Verbose output
     -h, --help          Display this help message""")
 
+
+if len(sys.argv) < 2:
+    print("Error: No domain file specified")
+    helppage()
+    sys.exit(1)
 if "-h" in sys.argv or "--help" in sys.argv:
     helppage()
     sys.exit(1)
