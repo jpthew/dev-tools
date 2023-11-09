@@ -1,4 +1,4 @@
-#!/usr/sbin/python3
+#!/usr/bin/python3
 #
 #
 # NEED TO ADD STDIN SUPPORT (Need to modify all lines referencing args.input) #
