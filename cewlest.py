@@ -10,7 +10,6 @@ import datetime
 import argparse
 import re
 import textwrap
-import fileinput
 
 def print_disable():
     sys.stdout = open(os.devnull, 'w')
