@@ -197,7 +197,7 @@ parser = argparse.ArgumentParser(
         Allows for clean output to stdout with -q/--quiet and output to file with -o/--output.
     '''), 
     epilog="Example: python3 cewlest.py -i domains.txt -o output.txt -t 5")
-parser.add_argument("-i", "--input", help="Input file of domains to spider and cewl", metavar="FILE")
+parser.add_argument("-i", "--input", help="Input file of domains to spider and cewl", metavar="FILE", required=True)
 parser.add_argument("-o", "--output", help="Output to file instead of stdout", metavar="FILE")
 parser.add_argument("-v", "--verbose", help="Verbose output", action="store_true")
 parser.add_argument("-t", "--threads", help="Number of threads to use with cewl. (Default 5)", type=int, default=5, metavar="<int>")
